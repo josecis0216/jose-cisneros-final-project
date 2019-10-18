@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <!-- <v-app-bar app>
       <v-toolbar-title class="headline text-uppercase">
         <span>Vuetify</span>
         <span class="font-weight-light">MATERIAL DESIGN</span>
@@ -17,17 +17,23 @@
 
     <v-content>
       <HelloWorld/>
-    </v-content>
+    </v-content> -->
+    <app-header></app-header>
+    <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    'app-header': Header,
+    'app-footer': Footer
   },
   data: () => ({
     //
