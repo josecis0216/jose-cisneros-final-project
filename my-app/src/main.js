@@ -6,6 +6,12 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
+// Vue.directive('background', {
+//   bind(el, binding) {
+//     el.style.backgroundImage = url('https://wallpaperaccess.com/full/96968.png')
+//   }
+// })
+
 new Vue({
   router,
   store,

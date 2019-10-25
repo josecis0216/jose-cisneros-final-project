@@ -1,42 +1,24 @@
 <template>
   <v-app>
-    <!-- <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content> -->
     <app-header></app-header>
+    <div class="circular" v-bind:style="{ backgroundImage: 'url(' + image + ')' }"></div>
     <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+// import HelloWorld from './components/HelloWorld'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     'app-header': Header,
     'app-footer': Footer
   },
   data: () => ({
-    //
+    image: 'http://1.bp.blogspot.com/-8PfnHfgrH4I/TylX2v8pTMI/AAAAAAAAJJ4/TICBoSEI57o/s1600/search_by_image_image.png'
   })
 }
 </script>
