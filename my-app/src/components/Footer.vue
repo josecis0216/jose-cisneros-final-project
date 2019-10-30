@@ -39,8 +39,8 @@
         'mdi-email',
         'mdi-calendar',
         'mdi-delete',
-      ],
-    }),
+      ]
+    })
   }
 </script>
 
