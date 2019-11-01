@@ -1,8 +1,7 @@
 <template>
-    <v-card height="400px">
+    <!-- <v-card height="400px"> -->
     <v-footer
-      fixed
-      padless
+      absolute
     >
       <v-card
         flat
