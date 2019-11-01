@@ -1,98 +1,81 @@
 <template>
-  <form>
-    <v-text-field
-      v-model="name"
-      v-validate="'required|max:10'"
-      :counter="10"
-      :error-messages="errors.collect('name')"
-      label="Name"
-      data-vv-name="name"
-      required
-    ></v-text-field>
-    <v-text-field
-      v-model="email"
-      v-validate="'required|email'"
-      :error-messages="errors.collect('email')"
-      label="E-mail"
-      data-vv-name="email"
-      required
-    ></v-text-field>
-    <v-select
-      v-model="select"
-      v-validate="'required'"
-      :items="items"
-      :error-messages="errors.collect('select')"
-      label="Select"
-      data-vv-name="select"
-      required
-    ></v-select>
-    <v-checkbox
-      v-model="checkbox"
-      v-validate="'required'"
-      :error-messages="errors.collect('checkbox')"
-      value="1"
-      label="Option"
-      data-vv-name="checkbox"
-      type="checkbox"
-      required
-    ></v-checkbox>
+  <v-row align="center">
+    <v-col cols="6" justify-center>
+      <v-form
+      ref="form"
+      v-model="valid"
+      :lazy-validation="lazy"
+    >
+      <v-text-field
+        v-model="name"
+        :counter="10"
+        :rules="nameRules"
+        label="Name"
+        required
+      ></v-text-field>
 
-    <v-btn class="mr-4" @click="submit">submit</v-btn>
-    <v-btn @click="clear">clear</v-btn>
-  </form>
+      <v-text-field
+        v-model="email"
+        :rules="emailRules"
+        label="E-mail"
+        required
+      ></v-text-field>
+
+      <v-checkbox
+        v-model="checkbox"
+        :rules="[v => !!v || 'You must agree to continue!']"
+        label="Do you agree?"
+        required
+      ></v-checkbox>
+
+      <v-btn
+        :disabled="!valid"
+        color="success"
+        class="mr-4"
+        @click="validate"
+      >
+        Validate
+      </v-btn>
+
+      <v-btn
+        color="error"
+        class="mr-4"
+        @click="reset"
+      >
+        Reset Form
+      </v-btn>
+    </v-form>
+    </v-col>
+  </v-row>
 </template>
 
-<script> 
-  Vue.use(VeeValidate)
 
+ <script>
   export default {
-    $_veeValidate: {
-      validator: 'new',
-    },
-
     data: () => ({
+      valid: true,
       name: '',
-      email: '',
-      select: null,
-      items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
       ],
-      checkbox: null,
-      dictionary: {
-        attributes: {
-          email: 'E-mail Address',
-          // custom attributes
-        },
-        custom: {
-          name: {
-            required: () => 'Name can not be empty',
-            max: 'The name field may not be greater than 10 characters',
-            // custom messages
-          },
-          select: {
-            required: 'Select field is required',
-          },
-        },
-      },
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      checkbox: false,
+      lazy: false,
     }),
 
-    mounted () {
-      this.$validator.localize('en', this.dictionary)
-    },
-
     methods: {
-      submit () {
-        this.$validator.validateAll()
+      validate () {
+        if (this.$refs.form.validate()) {
+          this.snackbar = true
+        }
       },
-      clear () {
-        this.name = ''
-        this.email = ''
-        this.select = null
-        this.checkbox = null
-        this.$validator.reset()
+      reset () {
+        this.$refs.form.reset()
       },
     },
   }
