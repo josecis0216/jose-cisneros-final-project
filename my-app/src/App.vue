@@ -1,7 +1,7 @@
-<template style="margin-left: 25px;">
+<template>
   <v-app>
     <app-header></app-header>
-    <div class="circular" v-bind:style="{ backgroundImage: 'url(' + image + ')' }"></div>
+    <!-- <div class="circular" v-bind:style="{ backgroundImage: 'url(' + image + ')' }"></div> -->
     <contact-page></contact-page>
     <app-footer></app-footer>
   </v-app>
