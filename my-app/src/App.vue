@@ -11,7 +11,7 @@
 // import HelloWorld from './components/HelloWorld'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Contact from './components/Conatact'
+import Contact from './components/Contact'
 
 export default {
   name: 'App',
