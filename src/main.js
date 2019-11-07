@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import VueRouter from 'vue-router'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import { routes } from './router'
 
 Vue.config.productionTip = false
 
@@ -11,6 +12,12 @@ Vue.config.productionTip = false
 //     el.style.backgroundImage = url('https://wallpaperaccess.com/full/96968.png')
 //   }
 // })
+
+Vue.use(VueRouter);
+
+const router = new VueRouter ({
+  routes
+});
 
 new Vue({
   router,
