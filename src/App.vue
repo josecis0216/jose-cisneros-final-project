@@ -1,12 +1,18 @@
 <template>
   <v-app>
     <h1>Routing</h1>
+    <app-header></app-header>
     <router-view></router-view>
   </v-app>
 </template>
 
 <script>
-export default {};
+  import Header from './components/Header.vue'
+export default {
+  components: {
+    'app-header': Header,
+  }
+};
 </script>
 
 <style scoped>
