@@ -1,5 +1,6 @@
 <template>
     <v-app>
+        <app-header></app-header>
         <contact-page></contact-page>
         <hr>
         <app-footer></app-footer>
@@ -8,12 +9,14 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld'
+import Header from './Header'
 import Footer from './Footer'
 import Contact from './Contact'
 
 export default {
   name: 'App',
   components: {
+    'app-header': Header,
     'app-footer': Footer,
     'contact-page': Contact
   },

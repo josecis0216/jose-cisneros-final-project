@@ -1,6 +1,7 @@
 <template>
     <v-app>
         <h1>About Page</h1>
+        <app-header></app-header>
         <hr>
         <app-footer></app-footer>
     </v-app>

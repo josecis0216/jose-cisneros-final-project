@@ -1,14 +1,12 @@
 <template>
   <v-app>
-    <h1>Routing</h1>
-    <app-header></app-header>
     <router-view></router-view>
   </v-app>
 </template>
 
 <script>
   import Header from './components/Header.vue'
-export default {
+  export default {
   components: {
     'app-header': Header,
   }
