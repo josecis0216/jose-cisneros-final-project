@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <app-header></app-header>
     <v-row>
       <v-col cols="6">
         <h2>Contact Us</h2>
@@ -52,11 +53,15 @@
       </v-form>
       </v-col>
     </v-row>
+    <app-footer></app-footer>
   </v-container>
 </template>
 
 
  <script>
+  import Header from './Header'
+  import Footer from './Footer'
+
   export default {
     data: () => ({
       valid: true,
@@ -84,5 +89,9 @@
         this.$refs.form.reset()
       },
     },
+    components: {
+      'app-header': Header,
+      'app-footer': Footer
+    }
   }
 </script>
