@@ -16,7 +16,7 @@
             'app-footer': Footer,
         },
         data: () => ({
-
+            
         })
     }
 </script>

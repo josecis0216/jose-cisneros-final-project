@@ -1,9 +1,9 @@
 <template>
-    <v-app>
-        <app-header></app-header>
-        <hr>
-        <app-footer></app-footer>
-    </v-app>
+  <v-app>
+      <app-header></app-header>
+      <hr>
+      <app-footer></app-footer>
+  </v-app>
 </template>
 
 <script>
