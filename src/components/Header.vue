@@ -2,7 +2,8 @@
     <div>
     <v-toolbar color="blue lighten-1">
       <v-toolbar-title>
-        Pokedex
+        Ultimate
+        Team
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
