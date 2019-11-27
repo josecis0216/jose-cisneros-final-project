@@ -1,17 +1,17 @@
 <template>
   <v-app>
-      <h2>Choose a position</h2>
       <app-header></app-header>
       <hr>
-      <div class="form-group">
-        <label>Username</label>
-        <input class="form-control" type="text" v-model="user.username">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input class="form-control" type="text" v-model="user.email">
-      </div>
-      <button class="btn btn-primary" @click="submit">Submit</button>
+      <v-row justify="space-around">
+        <v-col cols="6">
+          <v-form>
+            <v-text-field label="Username" v-model="user.username" required></v-text-field>
+            <v-text-field label ="Email" v-model="user.email" required></v-text-field>
+            <v-btn @click="submit">Submit</v-btn>
+            <v-btn @click="fetchData">Get Data</v-btn>
+          </v-form>
+        </v-col>
+      </v-row>
       <app-footer></app-footer>
   </v-app>
 </template>
@@ -35,13 +35,20 @@ export default {
   }),
   methods: {
     submit() {
-      console.log(this.user);
-      this.$http.post('https://vuejs-http-ecf72.firebaseio.com/data.json',this.user)
+      //console.log(this.user);
+      this.$http.post('https://vuejs-http-ecf72.firebaseio.com/data.json', this.user)
       .then(response => {
           console.log(reponse);
         }, error => {
           console.log(error);
         });
+    },
+    fetchData() {
+      this.$http.get('https://vuejs-http-ecf72.firebaseio.com/data.json')
+      .then(response => {
+        return response.json();
+      })
+      .then(data => console.log(data));
     }
   }
 }
