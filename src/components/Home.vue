@@ -12,6 +12,7 @@
           </v-form>
         </v-col>
       </v-row>
+      {{ weatherData }}
       <app-footer></app-footer>
   </v-app>
 </template>
@@ -31,7 +32,8 @@ export default {
         user: {
           username: '',
           email: '',
-        }
+        },
+        weatherData: null,
   }),
   methods: {
     submit() {
@@ -44,11 +46,11 @@ export default {
         });
     },
     fetchData() {
-      this.$http.get('https://vuejs-http-ecf72.firebaseio.com/data.json')
+      this.$http.get('http://api.openweathermap.org/data/2.5/forecast?q=London&APPID=fb4dcfe319d28532cdcfa9ef08fc9b1a')
       .then(response => {
         return response.json();
       })
-      .then(data => console.log(data));
+      .then(response => (this.weatherData = response))
     }
   }
 }
