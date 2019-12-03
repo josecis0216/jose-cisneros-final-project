@@ -5,6 +5,7 @@
       <v-row justify="space-around">
         <v-col cols="6">
           <v-form>
+            <h1>Login</h1>
             <v-text-field label="Username" v-model="user.username" required></v-text-field>
             <v-text-field label ="Email" v-model="user.email" required></v-text-field>
             <v-btn @click="submit">Submit</v-btn>
