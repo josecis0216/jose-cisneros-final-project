@@ -1,26 +1,9 @@
-<!--<template>
-  <v-app>
-    <router-view></router-view>
-  </v-app>
-</template>
-
-<script>
-  import Header from './components/Header.vue'
-  export default {
-  components: {
-    'app-header': Header,
-  }
-};
-</script>
-
-<style scoped>
-</style>-->
 <template>
   <div id="app">
     <div class="nav">
-      <!--<router-link to="/" class="nav__link">Home</router-link>
-      <router-link to="/about" class="nav__link">About</router-link>-->
-      <app-header></app-header>
+      <router-link to="/" class="nav__link">Home</router-link>
+      <router-link to="/about" class="nav__link">About</router-link>
+      <router-link to="/favorites" class="nav__link">Favorites</router-link>
     </div>
     <router-view />
   </div>
@@ -35,12 +18,13 @@
   }
 
   a {
-    color: #153B50;
-    text-decoration-color: rgba($color: #153B50, $alpha: 0.5);
+    color: rgb(27, 109, 64);
+    // text-decoration-color: rgba($color: #153B50, $alpha: 0.5);
+    text-decoration: none;
     transition: all 0.3s ease;
 
     &:hover {
-      text-decoration-color: #153B50;
+      text-decoration-color: rgb(78, 80, 82);
     }
   }
 
