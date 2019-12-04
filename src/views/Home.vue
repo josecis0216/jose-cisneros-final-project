@@ -1,13 +1,25 @@
 <template>
-  <HelloWorld />
+  <div class="home">
+    <weatherWidget />
+  </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld'
+import weatherWidget from '@/components/weatherWidget.vue';
 
 export default {
+  name: "home",
   components: {
-    HelloWorld
+    weatherWidget
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
