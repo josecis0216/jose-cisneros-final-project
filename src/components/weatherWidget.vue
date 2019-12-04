@@ -2,8 +2,9 @@
   <div>
     <div v-if="this.$store.state.dataIsRecived" class="weather-widget">
       <p class="weather-widget__city">{{ weather.city_name }}</p>
-      <h2 class="weather-widget__temp">{{ weather.temp }}<span>°C</span></h2>
+      <h2 class="weather-widget__temp">{{ weather.temp }}<span>°F</span></h2>
       <p class="weather-widget__status">{{ weather.weather.description }}</p>
+      <p class="weather-widget__status">{{ weather.clouds }}</p>
     </div>
     <div v-else class="weather-widget">
       <img src="spinner.svg" alt="">

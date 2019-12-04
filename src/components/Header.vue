@@ -1,4 +1,4 @@
-<<template>
+<template>
     <div>
     <v-toolbar color="blue lighten-1">
       <v-toolbar-title>
