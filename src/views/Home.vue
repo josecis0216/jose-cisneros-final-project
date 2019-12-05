@@ -1,16 +1,19 @@
 <template>
   <div class="home">
     <weatherWidget />
+    <peopleFetch />
   </div>
 </template>
 
 <script>
 import weatherWidget from '@/components/weatherWidget.vue';
+import peopleFetch from '@/components/Home.vue'; 
 
 export default {
   name: "home",
   components: {
-    weatherWidget
+    weatherWidget,
+    peopleFetch
   }
 }
 </script>
