@@ -18,6 +18,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import service from './services/services.js';
+import VueRouter from 'vue-router';
 
 Vue.use(Vuex)
 
@@ -43,6 +44,13 @@ export default new Vuex.Store({
   actions: {
     updateWeather (context) {
       context.commit('UPDATE_WEATHER')
+    },
+    userLogin ({ commit }, user) {
+      commit('storeUser', user)
+      router.replace('/FavoritesPage')
+    },
+    favoriteAdded ({ commit }, favorite) {
+        commit('storeFavorite', favorite)
     }
   }
 })
