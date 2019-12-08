@@ -22,19 +22,13 @@ export default new Vuex.Store({
         })
         .catch(error => {
           console.log('There was an error:', error.response)
+          state.dataIsRecived = false
         })
     }
   },
   actions: {
     updateWeather (context) {
       context.commit('UPDATE_WEATHER')
-    },
-    userLogin ({ commit }, user) {
-      commit('storeUser', user)
-      router.replace('/FavoritesPage')
-    },
-    favoriteAdded ({ commit }, favorite) {
-        commit('storeFavorite', favorite)
     }
   }
-})
+});

@@ -32,59 +32,46 @@
 </template>-->
 <template>
     <div>
-    
-    
       <h1>Welcome :  {{ userName }}  </h1>
-
-
-
      <v-row>
        <v-col col="3" v-for="(favorite, index) in favoritesList[0][0]" v-bind:key="index">
        
          <v-card class="mx-auto card" max-width="300" outlinded :elevation="14" >
            <div class="spacing"></div>
-            <v-img class="image" v-bind:src="`./assets/images/${favorite.image}`" > </v-img>
-            
-              <v-expansion-panels>
+            <v-img class="image" v-bind:src="`./assets/images/${favorite.image}`" > </v-img>    
+    <v-expansion-panels>
       <v-expansion-panel>
         <v-expansion-panel-header class="textStyle" :title="title" >{{ favorite.title }}</v-expansion-panel-header>
         <v-expansion-panel-content>
-   
-                <v-card-text :description="description"> {{ favorite.description }}  </v-card-text>
-                <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ favorite.dateCreated }} </v-card-subtitle>
-               
-   
+          <v-card-text :description="description"> {{ favorite.description }}  </v-card-text>
+          <v-card-subtitle :dateCreated="dateCreated">   Date created: {{ favorite.dateCreated }} </v-card-subtitle>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
        </v-card>
       </v-col>
-     </v-row>
+    </v-row>
   <v-form v-on:submit.prevent="getResult(userDate)" class="formDate">
-                    <input type="hidden" v-model="userDate" minlength="10" maxlength="10" > 
-                  
-                    <v-btn type="submit" class="submitBtn" color="white black--text" >Favorite Date</v-btn>
-                </v-form>
-         <v-card class="mx-auto" max-width="400"> 
-                       
-                    <v-img class="white--text align-end" v-bind:src="url">
-                        <v-card-title class="title">{{ title }} </v-card-title>
-                    </v-img>
-                    <v-card-title> Your favorite date: {{ date }} </v-card-title>
-                    <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
-                </v-card>
-          
-       
-             <div class="spacer"></div>
-    </div>
+    <input type="hidden" v-model="userDate" minlength="10" maxlength="10" >               
+    <v-btn type="submit" class="submitBtn" color="white black--text" >Favorite Date</v-btn>
+  </v-form>
+  <v-card class="mx-auto" max-width="400">                    
+    <v-img class="white--text align-end" v-bind:src="url">
+      <v-card-title class="title">{{ title }} </v-card-title>
+    </v-img>
+      <v-card-title> Your favorite date: {{ date }} </v-card-title>
+      <v-card-text class="text--primary"> {{ explanation }} </v-card-text>
+  </v-card>
+  <div class="spacer"></div>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-    props: ['favorite'],
+   props: ['favorite'],
    computed:{
-        userDate(){
+       userDate(){
            return this.$store.getters.userDate
        },
        userName(){
@@ -96,7 +83,7 @@ export default {
    },
    data: () =>{
    return{
-       date: '',
+       city: '',
        name: '',
        explanation: '',
        url: '',
@@ -107,11 +94,11 @@ export default {
     }
    },
    methods: {
-        getResult(date) {
-            return axios.get('https://api.nasa.gov/planetary/apod?api_key=2XbWea3D9xnTDa8rar9X7j3VfBHCllFBeL8HcbCE&date=' + date).then
+        getResult(city) {
+            return axios.get('https://api.weatherbit.io/v2.0/current?city=Kiev,UA&units=I&key=7ee1a2cccf514c62a5e63c60139464c0').then
             (response =>{
                 this.explanation = response.data.explanation
-                this.date = response.data.date
+                this.city = response.data.city
                 this.url = response.data.url
                 this.title = response.data.title
                 console.log(response)

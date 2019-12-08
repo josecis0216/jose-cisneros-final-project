@@ -9,6 +9,7 @@
     <div v-else class="weather-widget">
       <img src="spinner.svg" alt="">
     </div>
+    <!-- <v-btn @click="addFavorites()">Add Favorite</v-btn> -->
   </div>
 </template>
 
@@ -17,12 +18,12 @@
     computed: {
       weather() {
         return this.$store.state.weather
-      }
-    },
-    created() {
+      },
+      created() {
       this.$store.dispatch("updateWeather");
     }
-  }
+  },
+}
 </script>
 
 <style lang="scss" scoped>

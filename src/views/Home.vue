@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <weatherWidget />
-    <peopleFetch />
+    <!-- <peopleFetch /> -->
   </div>
 </template>
 
