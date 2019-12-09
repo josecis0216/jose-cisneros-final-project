@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import service from './services/services.js';
+import service from '@/services/services.js';
 import VueRouter from 'vue-router';
 
 Vue.use(Vuex)

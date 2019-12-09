@@ -4,7 +4,7 @@
       <p class="weather-widget__city">{{ weather.city_name }}</p>
       <h2 class="weather-widget__temp">{{ weather.temp }}<span>°F</span></h2>
       <p class="weather-widget__status">{{ weather.weather.description }}</p>
-      <p class="weather-widget__status">{{ weather.clouds }}</p>
+      <!-- <p class="weather-widget__status">{{ weather.clouds }}</p> -->
     </div>
     <div v-else class="weather-widget">
       <img src="spinner.svg" alt="">

@@ -1,7 +1,7 @@
-<!--<template>
-  <v-app>
-    <h2>Favorites</h2>
+<template>
+  <div>
     <v-container fluid>
+      <h2>Favorites</h2>
       <v-row align="center">
         <v-col cols="12" sm="6">
         <v-select
@@ -28,9 +28,9 @@
       <input v-model="newFav">
       <button @click="addFav">Add a Favorite</button>
     </p>
-  </v-app>
-</template>-->
-<template>
+  </div>
+</template>
+<!--<template>
     <div>
       <h1>Welcome :  {{ userName }}  </h1>
      <v-row>
@@ -64,9 +64,9 @@
   </v-card>
   <div class="spacer"></div>
   </div>
-</template>
+</template>-->
 
-<script>
+<!--<script>
 import axios from 'axios'
 export default {
    props: ['favorite'],
@@ -97,19 +97,16 @@ export default {
         getResult(city) {
             return axios.get('https://api.weatherbit.io/v2.0/current?city=Kiev,UA&units=I&key=7ee1a2cccf514c62a5e63c60139464c0').then
             (response =>{
-                this.explanation = response.data.explanation
                 this.city = response.data.city
-                this.url = response.data.url
-                this.title = response.data.title
                 console.log(response)
             
             }).catch(error => console.log(error))
         },
     } 
 }
-</script>
+</script>-->
 
- <!--<script>
+<script>
 
   export default {
     data: () => ({
@@ -167,5 +164,4 @@ export default {
     },
   }
 }
-
-</script>-->
+</script>
