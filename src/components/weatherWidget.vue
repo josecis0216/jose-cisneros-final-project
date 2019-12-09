@@ -9,7 +9,6 @@
     <div v-else class="weather-widget">
       <img src="spinner.svg" alt="">
     </div>
-    <!-- <v-btn @click="addFavorites()">Add Favorite</v-btn> -->
   </div>
 </template>
 
@@ -22,7 +21,7 @@
       created() {
       this.$store.dispatch("updateWeather");
     }
-  },
+  }
 }
 </script>
 
