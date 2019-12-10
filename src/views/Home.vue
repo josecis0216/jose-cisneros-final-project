@@ -1,13 +1,21 @@
 <template>
-  <div class="home">
-    <weatherWidget />
-    <!-- <peopleFetch /> -->
-  </div>
+    <v-container>
+      <v-row>
+        <v-col cols="12" lg="6">
+          <weatherWidget />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12" lg="6">
+          <peopleFetch />
+        </v-col>
+      </v-row>
+    </v-container>
 </template>
 
 <script>
 import weatherWidget from '@/components/weatherWidget.vue';
-import peopleFetch from '@/components/Home.vue'; 
+import peopleFetch from '@/components/People.vue'; 
 
 export default {
   name: "home",

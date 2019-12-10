@@ -4,7 +4,7 @@
 // import store from './store'
 // import vuetify from './plugins/vuetify'
 // import { routes } from './router'
-// import VueResource from 'vue-resource'
+import VueResource from 'vue-resource'
 
 // Vue.use(VueResource)
 
@@ -28,8 +28,9 @@ import vuetify from './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
 import 'normalize.css'
+
+Vue.use(VueResource)
 
 Vue.config.productionTip = false
 

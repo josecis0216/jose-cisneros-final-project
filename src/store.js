@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import service from '@/services/services.js';
-import VueRouter from 'vue-router';
+import service from '@/services/services.js'
 
 Vue.use(Vuex)
 
@@ -31,4 +30,4 @@ export default new Vuex.Store({
       context.commit('UPDATE_WEATHER')
     }
   }
-});
+})
