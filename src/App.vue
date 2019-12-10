@@ -14,7 +14,7 @@
 
   body {
     font-family: 'Montserrat', sans-serif;
-    max-height: 100vh;
+    max-height: 100vh; 
   }
 
   a {

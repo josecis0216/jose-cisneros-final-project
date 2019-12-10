@@ -3,3 +3,6 @@ module.exports = {
     'vuetify'
   ]
 }
+watchOptions: {
+  poll: true
+}
