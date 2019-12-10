@@ -1,11 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
-<<<<<<< HEAD
-import service from "@/services/services.js";
-=======
 import service from '@/services/services.js'
->>>>>>> 78b1632a68c944e57523c573fd31a65effa4e539
 
 Vue.use(Vuex);
 
